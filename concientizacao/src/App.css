@@ -1,0 +1,485 @@
+.faixa {
+  display: block;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--racismo) 0 25%,
+    var(--trans) 25% 50%,
+    var(--miso) 50% 75%,
+    var(--homo) 75% 100%
+  );
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--borda);
+}
+
+.header-linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px var(--lateral);
+}
+
+.logo {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+}
+
+.logo span {
+  color: var(--miso);
+}
+
+.header nav {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+}
+
+.header nav a {
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--suave);
+  font-weight: 500;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.header nav a:hover {
+  background: var(--cartao);
+  color: var(--texto);
+}
+
+.etiqueta {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--suave);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.inicio {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: clamp(32px, 6vw, 80px);
+  min-height: calc(100vh - 70px);
+  padding: 60px var(--lateral);
+}
+
+.inicio h1 {
+  font-size: clamp(2.6rem, 6.4vw, 5rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  margin-bottom: 24px;
+}
+
+.inicio p {
+  max-width: 560px;
+  color: var(--suave);
+  font-size: 1.15rem;
+  margin-bottom: 36px;
+}
+
+.botao {
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 999px;
+  background: var(--texto);
+  color: var(--fundo);
+  font-weight: 600;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.botao:hover {
+  transform: translateY(-3px);
+  background: #000000;
+}
+
+.inicio-imagem {
+  position: relative;
+}
+
+.inicio-imagem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translate(18px, 18px);
+  border-radius: 28px;
+  background: linear-gradient(
+    135deg,
+    var(--racismo) 0 25%,
+    var(--trans) 25% 50%,
+    var(--miso) 50% 75%,
+    var(--homo) 75% 100%
+  );
+}
+
+.inicio-imagem img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 28px;
+}
+
+.titulo-secao {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.titulo-secao h2 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.titulo-secao p {
+  color: var(--suave);
+}
+
+.sobre,
+.representantes,
+.temas,
+.dados,
+.conscientizacao {
+  padding: clamp(64px, 9vw, 112px) var(--lateral);
+  scroll-margin-top: 70px;
+}
+
+.sobre {
+  background: var(--fundo-2);
+  text-align: center;
+}
+
+.sobre h2 {
+  max-width: 800px;
+  margin: 0 auto 22px;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+}
+
+.sobre > p {
+  max-width: 680px;
+  margin: 0 auto 56px;
+  color: var(--suave);
+}
+
+.sobre-numeros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.sobre-numeros div {
+  padding: 28px 20px;
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  background: var(--cartao);
+}
+
+.sobre-numeros strong {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.sobre-numeros div:nth-child(1) strong {
+  color: var(--racismo);
+}
+.sobre-numeros div:nth-child(2) strong {
+  color: var(--miso);
+}
+.sobre-numeros div:nth-child(3) strong {
+  color: var(--homo);
+}
+
+.sobre-numeros span {
+  color: var(--suave);
+}
+
+.container-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.card-pessoa {
+  display: flex;
+  flex-direction: column;
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 22px;
+  overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.card-pessoa:hover {
+  transform: translateY(-6px);
+  border-color: var(--suave);
+}
+
+.foto-container {
+  aspect-ratio: 4 / 4.4;
+  overflow: hidden;
+}
+
+.foto-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.4s;
+}
+
+.card-pessoa:hover .foto-container img {
+  transform: scale(1.05);
+}
+
+.card-pessoa h3 {
+  padding: 22px 22px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.causa-tag {
+  align-self: flex-start;
+  margin: 10px 22px 0;
+  padding: 4px 12px;
+  border: 1px solid;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.card-pessoa p {
+  padding: 12px 22px 24px;
+  color: var(--suave);
+  font-size: 0.95rem;
+}
+
+.temas {
+  background: var(--fundo-2);
+}
+
+.card-tema {
+  padding: 32px 26px;
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+}
+
+.card-tema h3 {
+  margin-bottom: 12px;
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.card-tema p {
+  color: var(--suave);
+}
+
+.dados-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.dado-card {
+  padding: 32px 28px;
+  background: var(--fundo-2);
+  border-left: 6px solid;
+  border-radius: 8px 20px 20px 8px;
+}
+
+.dado-card:nth-child(1) {
+  border-color: var(--racismo);
+}
+.dado-card:nth-child(2) {
+  border-color: var(--trans);
+}
+.dado-card:nth-child(3) {
+  border-color: var(--miso);
+}
+.dado-card:nth-child(4) {
+  border-color: var(--homo);
+}
+
+.dado-card h3 {
+  margin-bottom: 8px;
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.dado-card:nth-child(1) h3 {
+  color: var(--racismo);
+}
+.dado-card:nth-child(2) h3 {
+  color: var(--trans);
+}
+.dado-card:nth-child(3) h3 {
+  color: var(--miso);
+}
+.dado-card:nth-child(4) h3 {
+  color: var(--homo);
+}
+
+.dado-card h4 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.dado-card p {
+  color: var(--suave);
+  font-size: 0.95rem;
+}
+
+.fonte {
+  max-width: 760px;
+  margin: 40px auto 0;
+  color: var(--suave);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.conscientizacao {
+  background: var(--fundo-2);
+}
+
+.conscientizacao-conteudo > h2 {
+  margin-bottom: 14px;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+}
+
+.conscientizacao-conteudo > p {
+  max-width: 620px;
+  margin-bottom: 48px;
+  color: var(--suave);
+}
+
+.lista-atitudes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+}
+
+.atitude {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 22px;
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 18px;
+}
+
+.atitude span {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--texto);
+  color: var(--fundo);
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+}
+
+.atitude p {
+  padding-top: 8px;
+}
+
+.frase-final {
+  padding: clamp(72px, 11vw, 140px) var(--lateral);
+  background: var(--texto);
+  color: var(--fundo);
+  text-align: center;
+}
+
+.frase-final span {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #c9ccd6;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.frase-final h2 {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  font-size: clamp(2.2rem, 6vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.frase-final p {
+  font-size: 1.2rem;
+  color: #e3e5ea;
+}
+
+.footer {
+  padding: 56px var(--lateral) 48px;
+  text-align: center;
+}
+
+.footer h2 {
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.footer h2 span {
+  color: var(--miso);
+}
+
+.footer p {
+  color: var(--suave);
+}
+
+.footer-final {
+  margin-top: 18px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 860px) {
+  .header-linha {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .inicio {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 40px;
+  }
+
+  .inicio-imagem {
+    max-width: 420px;
+  }
+
+  .inicio-imagem::before {
+    transform: translate(10px, 10px);
+  }
+}

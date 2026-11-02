@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap");
+
+:root {
+  --fundo: #ffffff;
+  --fundo-2: #f2f3f5;
+  --cartao: #ffffff;
+  --borda: #dcdfe6;
+  --texto: #1d1f24;
+  --suave: #565b66;
+
+  --racismo: #b5451b;
+  --trans: #1f7a9c;
+  --miso: #b3205f;
+  --homo: #5b3fc4;
+  --fonte-titulo: "Bricolage Grotesque", "Arial Black", sans-serif;
+  --fonte-texto: "Figtree", "Segoe UI", Arial, sans-serif;
+
+  --lateral: max(24px, calc((100% - 1160px) / 2));
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte-texto);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--texto);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
